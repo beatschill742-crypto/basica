@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación a Misa</title>
+    <title>En Memoria - Invitación a Misa</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,107 +11,149 @@
             theme: {
                 extend: {
                     colors: {
-                        graphite: '#4B5563', // Gris oscuro elegante
-                        silver: '#9CA3AF',   // Gris claro para detalles
-                        bone: '#F9FAFB',     // Fondo casi blanco, suave
+                        charcoal: '#333333',     // Gris muy oscuro, casi negro suave
+                        taupe: '#8B857A',      // Tono greige cálido para acentos
+                        parchment: '#FAF9F6',  // Fondo cálido tipo pergamino claro
+                        stone: '#D1CEC7',      // Gris piedra para líneas sutiles
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
+                        serif: ['Playfair Display', 'serif'], // Playfair es muy elegante y solemne
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'fade-in-up': 'fadeInUp 1.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
         }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #F3F4F6; /* Fondo general un poco más gris para destacar la tarjeta */
+            background-color: #EFEBE4; /* Un fondo un poco más oscuro que la tarjeta para dar contraste */
+            background-image: radial-gradient(#d4d0c9 1px, transparent 1px);
+            background-size: 30px 30px;
         }
         
-        .animate-fade-in-up {
-            animation: fadeInUp 1.5s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
+        /* Efecto de borde de fotografía antigua/elegante */
+        .card-container {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid rgba(209, 206, 199, 0.4);
         }
 
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
+        /* Ocultar barra de desplazamiento en el marquee */
+        .marquee-container::-webkit-scrollbar {
+            display: none;
         }
-
-        .border-delicate {
-            border: 1px solid rgba(156, 163, 175, 0.2);
+        .marquee-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4 sm:p-8">
 
-    <!-- Contenedor principal (Diseño clásico y sereno) -->
-    <div class="bg-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] w-full max-w-md mx-auto rounded-xl relative overflow-hidden animate-fade-in-up border-delicate pb-12">
+    <div class="card-container bg-parchment w-full max-w-md mx-auto rounded-sm relative overflow-hidden animate-fade-in-up pb-12">
         
-        <!-- FOTO PRINCIPAL (Imagen serena) -->
-        <div class="relative h-[22rem] w-full">
-            <!-- Usamos una imagen de flores blancas, símbolo de paz -->
-            <img 
-                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Detalle floral" 
-                class="object-cover w-full h-full opacity-90"
-            />
-            <!-- Gradiente blanco muy suave para fusionar con el contenido -->
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white"></div>
+        <div class="bg-charcoal/5 border-b border-stone/30 py-2 overflow-hidden marquee-container flex whitespace-nowrap">
+            <div class="animate-marquee flex items-center">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+                <span class="text-[9px] text-stone mx-2">•</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+                <span class="text-[9px] text-stone mx-2">•</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+                <span class="text-[9px] text-stone mx-2">•</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+            </div>
+             <!-- Duplicado para efecto infinito suave -->
+             <div class="animate-marquee flex items-center absolute top-2" style="left: 100%;">
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+                <span class="text-[9px] text-stone mx-2">•</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+                <span class="text-[9px] text-stone mx-2">•</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+                <span class="text-[9px] text-stone mx-2">•</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
+            </div>
         </div>
 
-        <div class="px-10 text-center relative z-10 -mt-20">
-            
-            <!-- Cruz simple o detalle ornamental (Opcional, en este caso una línea muy fina) -->
-            <div class="flex justify-center mb-6">
-                 <div class="w-px h-8 bg-silver/60"></div>
+        <div class="relative h-[20rem] w-full p-4 pb-0">
+            <div class="w-full h-full relative rounded-t-full overflow-hidden border border-stone/50 p-1">
+                 <img 
+                    src="https://images.unsplash.com/photo-1507290439931-a861b5a38200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Rosa blanca en símbolo de paz" 
+                    class="object-cover w-full h-full rounded-t-full opacity-85 grayscale-[30%]"
+                />
             </div>
+        </div>
+
+        <div class="px-8 text-center relative z-10 mt-8">
             
-            <p class="text-[10px] font-sans tracking-[0.2em] text-silver uppercase mb-4">En memoria de</p>
+            <p class="text-[10px] font-sans tracking-[0.2em] text-taupe uppercase mb-4">Invitación a Misa</p>
             
-            <!-- Nombre del difunto -->
-            <h1 class="text-4xl sm:text-5xl font-serif text-graphite mb-3 leading-tight font-medium">Carlos Robles</h1>
-            <h2 class="text-3xl font-serif text-graphite mb-6 leading-none">Mendoza</h2>
+            <!-- Ornamento superior -->
+            <div class="flex justify-center mb-4">
+                <svg width="60" height="15" viewBox="0 0 60 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-50">
+                    <path d="M30 0C30 0 35 14 60 14V15H0V14C25 14 30 0 30 0Z" fill="#8B857A"/>
+                </svg>
+            </div>
+
+            <!-- Nombre -->
+            <h1 class="text-4xl sm:text-5xl font-serif text-charcoal mb-2 leading-tight">Roberto</h1>
+            <h2 class="text-3xl font-serif text-charcoal mb-6 leading-none italic">Valdez Ocaña</h2>
             
-            <p class="font-serif italic text-graphite/80 text-lg mb-8 px-4">
-                "Aquellos que amamos no se van, caminan junto a nosotros cada día."
-            </p>
-            
-            <!-- Divisor sutil -->
+            <!-- Ornamento inferior -->
             <div class="flex justify-center mb-8">
-                <div class="w-16 h-px bg-silver/30"></div>
+                <svg width="60" height="15" viewBox="0 0 60 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-50 rotate-180">
+                    <path d="M30 0C30 0 35 14 60 14V15H0V14C25 14 30 0 30 0Z" fill="#8B857A"/>
+                </svg>
             </div>
 
-            <!-- Datos de Fecha y Hora -->
-            <div class="mb-8">
-                <p class="font-sans font-medium tracking-widest text-graphite uppercase text-[10px] mb-2">Misa de Aniversario</p>
-                <div class="flex justify-center items-center space-x-4 mb-2">
-                    <p class="font-sans tracking-wider text-xs text-graphite">VIERNES</p>
-                    <p class="font-serif text-3xl text-graphite">14</p>
-                    <p class="font-sans tracking-wider text-xs text-graphite">JUNIO</p>
-                </div>
-                <p class="font-sans text-[11px] text-silver mt-1">19:00 hrs</p>
-            </div>
+            <p class="font-serif italic text-charcoal/70 text-[17px] mb-10 px-2 leading-relaxed">
+                "Su luz sigue brillando en nuestros corazones y su recuerdo nos acompaña cada día."
+            </p>
 
-            <!-- Lugar -->
-            <div class="mb-10">
-                <h3 class="font-serif text-xl text-graphite mb-2">Parroquia de San Miguel Arcángel</h3>
-                <p class="font-sans text-xs text-gray-500 font-light px-2">Av. Revolución 456, Centro Histórico</p>
+            <div class="border-t border-stone/30 pt-8 mb-8">
+                <p class="font-sans font-medium tracking-[0.15em] text-taupe uppercase text-[10px] mb-4">Primer Aniversario Luctuoso</p>
                 
-                <a href="#" class="inline-block mt-4 text-[10px] tracking-widest uppercase text-silver border-b border-silver/50 pb-1 hover:text-graphite hover:border-graphite transition-colors">
-                    Ver Ubicación
-                </a>
+                <div class="flex justify-center items-center space-x-6 mb-4">
+                    <div class="text-right">
+                        <p class="font-sans tracking-widest text-[10px] text-charcoal">SÁBADO</p>
+                    </div>
+                    <div class="border-l border-r border-stone/40 px-6">
+                        <p class="font-serif text-4xl text-charcoal">20</p>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-sans tracking-widest text-[10px] text-charcoal">JUNIO</p>
+                    </div>
+                </div>
+                <p class="font-sans text-xs text-taupe tracking-widest">12:00 PM</p>
+            </div>
+
+            <div class="mb-10">
+                <h3 class="font-serif text-xl text-charcoal mb-2">Parroquia del Sagrado Corazón</h3>
+                <p class="font-sans text-xs text-charcoal/60 font-light px-2">Calle Independencia 123, Colonia Centro</p>
             </div>
 
             <!-- Script para WhatsApp -->
             <script>
                 function confirmarAsistencia() {
                     const telefono = "525512345678"; 
-                    const mensaje = encodeURIComponent("Buenas tardes. Acompañaremos a la familia en la misa de Carlos.");
+                    const mensaje = encodeURIComponent("Agradezco la invitación. Estaré acompañándolos en la misa de Roberto.");
                     const url = `https://wa.me/${telefono}?text=${mensaje}`;
                     window.open(url, '_blank');
                 }
@@ -119,11 +161,11 @@
 
             <button 
                 onclick="confirmarAsistencia()" 
-                class="w-full bg-white border border-silver/30 hover:bg-gray-50 text-graphite font-sans text-[10px] tracking-[0.15em] uppercase py-3.5 rounded transition-all duration-300 flex items-center justify-center shadow-sm"
+                class="w-full bg-transparent border border-stone hover:bg-stone/10 text-charcoal font-sans text-[10px] tracking-[0.2em] uppercase py-4 rounded-sm transition-all duration-300 flex items-center justify-center"
             >
-                Confirmar asistencia
+                Confirmar Asistencia
             </button>
-            <p class="text-[9px] text-silver mt-3 uppercase tracking-widest">Familia Robles Mendoza</p>
+            <p class="text-[8px] text-taupe mt-4 uppercase tracking-[0.2em]">Familia Valdez Ocaña</p>
 
         </div>
     </div>
