@@ -44,15 +44,15 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #EFEBE4; /* Un fondo un poco más oscuro que la tarjeta para dar contraste */
-            background-image: radial-gradient(#d4d0c9 1px, transparent 1px);
+            background-color: #F4F1ED; /* Un fondo ligeramente más claro y cálido */
+            background-image: radial-gradient(#dfdcd6 1px, transparent 1px);
             background-size: 30px 30px;
         }
         
-        /* Efecto de borde de fotografía antigua/elegante */
+        /* Efecto de sombra más suave y etéreo */
         .card-container {
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.03);
-            border: 1px solid rgba(209, 206, 199, 0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid rgba(255, 255, 255, 0.8); /* Borde blanco para iluminar */
         }
 
         /* Ocultar barra de desplazamiento en el marquee */
@@ -69,7 +69,8 @@
 
     <div class="card-container bg-parchment w-full max-w-md mx-auto rounded-sm relative overflow-hidden animate-fade-in-up pb-12">
         
-        <div class="bg-charcoal/5 border-b border-stone/30 py-2 overflow-hidden marquee-container flex whitespace-nowrap">
+        <!-- Banda superior ligeramente más clara -->
+        <div class="bg-stone/10 border-b border-stone/20 py-2 overflow-hidden marquee-container flex whitespace-nowrap">
             <div class="animate-marquee flex items-center">
                 <span class="text-[9px] uppercase tracking-[0.3em] text-taupe mx-8">En amoroso recuerdo de nuestro ser querido</span>
                 <span class="text-[9px] text-stone mx-2">•</span>
@@ -92,11 +93,13 @@
         </div>
 
         <div class="relative h-[20rem] w-full p-4 pb-0">
-            <div class="w-full h-full relative rounded-t-full overflow-hidden border border-stone/50 p-1">
+            <!-- Borde más sutil alrededor de la imagen -->
+            <div class="w-full h-full relative rounded-t-full overflow-hidden border border-stone/30 p-1 bg-white">
+                 <!-- IMAGEN CAMBIADA: Flores blancas luminosas y alegres, sin escala de grises -->
                  <img 
-                    src="https://images.unsplash.com/photo-1507290439931-a861b5a38200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                    alt="Rosa blanca en símbolo de paz" 
-                    class="object-cover w-full h-full rounded-t-full opacity-85 grayscale-[30%]"
+                    src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Flores blancas luminosas" 
+                    class="object-cover w-full h-full rounded-t-full opacity-95"
                 />
             </div>
         </div>
